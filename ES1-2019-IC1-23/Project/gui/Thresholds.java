@@ -1,4 +1,4 @@
-package raquel;
+package gui;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
