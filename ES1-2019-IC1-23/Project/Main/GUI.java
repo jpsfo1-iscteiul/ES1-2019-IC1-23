@@ -5,12 +5,22 @@ package Main;
  * and open the template in the editor.
  */
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+
+import javax.swing.JFileChooser;
+
+import gui.GUI;
 
 /**
  *
  * @author raque
  */
 public class GUI extends javax.swing.JFrame {
+	
+	
+	public static String EXCEL_PATH;
 
     /**
      * Creates new form GUI
@@ -42,6 +52,29 @@ public class GUI extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jButtonShowExcel = new javax.swing.JButton();
+        jButtonExcel.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				JFileChooser jfc=new JFileChooser(".");
+				jfc.setFileSelectionMode(JFileChooser.FILES_ONLY);
+
+				int returnValue = jfc.showOpenDialog(null);
+
+				if ( returnValue == JFileChooser.APPROVE_OPTION) {
+					File selectedFile=jfc.getSelectedFile();
+
+					System.out.println(selectedFile.getAbsolutePath());
+
+					//GUARDAR O PATH DO FICHEIRO EXCEL ACEDER APARTIR DESTA PROXIMA VAR //GUI.EXCEL_PATH
+					EXCEL_PATH=selectedFile.getAbsolutePath();
+					System.out.println(GUI.EXCEL_PATH);
+					
+				}
+
+			}
+
+		});
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
