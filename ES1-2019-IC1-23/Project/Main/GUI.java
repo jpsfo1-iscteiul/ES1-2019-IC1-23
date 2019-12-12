@@ -11,7 +11,7 @@ import java.io.File;
 
 import javax.swing.JFileChooser;
 
-import gui.GUI;
+import Main.GUI;
 
 /**
  *
