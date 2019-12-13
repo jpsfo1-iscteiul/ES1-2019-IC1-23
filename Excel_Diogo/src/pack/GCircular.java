@@ -13,7 +13,7 @@ public class GCircular extends Application {
 	
 	private Defects defects;
 	
-	public GCircular(Defects defects){
+	public void display(Defects defects){
 		this.defects = defects;
 		launch();
 	}
@@ -25,14 +25,15 @@ public class GCircular extends Application {
         stage.setWidth(500);
         stage.setHeight(500);
  
+        
         ObservableList<PieChart.Data> pieChartData =
                 FXCollections.observableArrayList(
-                new PieChart.Data("DCI", defects.getDCI()),
-                new PieChart.Data("DII", defects.getDII()),
-                new PieChart.Data("ADCI", defects.getADCI()),
-                new PieChart.Data("ADII", defects.getADII()));
+                new PieChart.Data("DCI", 2/*defects.getDCI()*/),
+                new PieChart.Data("DII", 2/*defects.getDII()*/),
+                new PieChart.Data("ADCI",2/* defects.getADCI()*/),
+                new PieChart.Data("ADII", 2/*defects.getADII()*/));
         final PieChart chart = new PieChart(pieChartData);
-        chart.setTitle(defects.getName());
+        chart.setTitle("ola"/*defects.getName()*/);
 
         ((Group) scene.getRoot()).getChildren().add(chart);
         stage.setScene(scene);

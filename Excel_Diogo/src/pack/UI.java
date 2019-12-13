@@ -720,14 +720,14 @@ public class UI {
 		btnGrficoCircular.setBounds(523, 594, 138, 37);
 		frame.getContentPane().add(btnGrficoCircular);
 		
-	/*	btnGrficoCircular.addActionListener(new ActionListener() {
+		btnGrficoCircular.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				//new 
+				new GCircular().display(defects); 
 				
 			}
-		})*/
+		});
 		
 		JButton btnGrficoDeBarras = new JButton("Gr\u00E1fico de barras");
 		btnGrficoDeBarras.setBounds(683, 594, 138, 37);

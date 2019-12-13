@@ -12,10 +12,10 @@ import javafx.stage.Stage;
 public class GBarras extends Application {
 	
 	private Defects defects;
-
 	public void display(Defects defects){
 		this.defects = defects;
 		launch();
+
 	}
 	
 	@Override public void start(Stage stage) {
