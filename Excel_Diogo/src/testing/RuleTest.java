@@ -45,7 +45,7 @@ class RuleTest {
 
 	Rule r5=new Rule("Rule cyclom",new Premisse(Metric.CYCLO,ComparisonOperator.LT, 3), new Conclusion(Classifier.FEATURE_ENVY_DEFECT, true));
 		
-			
+	/*
 			assertEquals(r.getPremisse1().getOperator(), ComparisonOperator.GT);
 			assertEquals(r1.getPremisse1().getOperator(), ComparisonOperator.GT);
 			assertEquals(r2.getPremisse1().getOperator(), ComparisonOperator.LT);
@@ -54,21 +54,22 @@ class RuleTest {
 			assertEquals(true, r1.getConclusion().getResult());
 			assertEquals(true, r2.getConclusion().getResult());
 			assertEquals(true, r3.getConclusion().getResult());
-			assertTrue((r4.getAndOr().equalsIgnoreCase("and")));
+			assertTrue((r4.getAndOr().equalsIgnoreCase("and"))); */
 
 	@Test
 	final void testRuleStringPremissePremisseStringConclusion() {
-		fail("Not yet implemented"); // TODO
+		assertEquals(r4, new Rule("Rule cyclom",new Premisse(Metric.CYCLO,ComparisonOperator.LT, 3),new Premisse(Metric.ATFD, ComparisonOperator.GT, 10),"and", new Conclusion(Classifier.FEATURE_ENVY_DEFECT, true)));
+		
 	}
 
 	@Test
 	final void testRuleStringPremisseConclusion() {
-		fail("Not yet implemented"); // TODO
+		assertEquals(r, new Rule("Rule locM",new Premisse(Metric.LOC,ComparisonOperator.GT, 3), new Conclusion(Classifier.IS_LONG_METHOD, true)));
 	}
 
 	@Test
 	final void testGetResultDoubleDouble() {
-		assertEquals()
+		//assertEquals(true, );
 	}
 
 	@Test
@@ -78,32 +79,34 @@ class RuleTest {
 
 	@Test
 	final void testToString() {
-		fail("Not yet implemented"); // TODO
+		assertEquals("Rule locM", r.toString());
 	}
 
 	@Test
 	final void testGetName() {
-		fail("Not yet implemented"); // TODO
+		assertEquals("Rule locM", r.getName());
 	}
 
 	@Test
 	final void testGetConclusion() {
-		fail("Not yet implemented"); // TODO
+		assertEquals(new Conclusion(Classifier.FEATURE_ENVY_DEFECT, true), r.getConclusion());
 	}
 
 	@Test
 	final void testGetPremisse1() {
-		fail("Not yet implemented"); // TODO
+		Premisse p=new Premisse(Metric.CYCLO,ComparisonOperator.LT, 3);
+		assertTrue((p.getOperator().toString().equalsIgnoreCase(r3.getPremisse1().getOperator().toString())));
+		
 	}
 
 	@Test
 	final void testGetPremisse2() {
-		fail("Not yet implemented"); // TODO
+		assertEquals(new Premisse(Metric.ATFD, ComparisonOperator.GT, 10), r4.getPremisse2());
 	}
 
 	@Test
 	final void testGetAndOr() {
-		fail("Not yet implemented"); // TODO
+		//assertTrue("and",r4.getAndOr());
 	}
 
 }

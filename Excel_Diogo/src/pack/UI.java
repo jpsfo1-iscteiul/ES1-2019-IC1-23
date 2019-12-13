@@ -40,8 +40,17 @@ public class UI {
 	private JTable table;
 	private Defects defects;
 	private UI ui = this;
+	private JButton feNewRule;
+	private JButton lmNewRule;
+	
+	public JButton getLmNewRule() {
+		return this.lmNewRule;
+	}
 
 
+	public JButton getFeNewRule() {
+		return this.feNewRule;
+	}
 	/**
 	 * Launch the application.
 	 */
@@ -49,6 +58,131 @@ public class UI {
 	
 	public Defects getDefects(){
 		return defects;
+	}
+
+
+	public JFrame getFrame() {
+		return frame;
+	}
+
+
+	public void setFrame(JFrame frame) {
+		this.frame = frame;
+	}
+
+
+	public JTextField getLm_textField() {
+		return lm_textField;
+	}
+
+
+	public void setLm_textField(JTextField lm_textField) {
+		this.lm_textField = lm_textField;
+	}
+
+
+	public JTextField getLm_textField_1() {
+		return lm_textField_1;
+	}
+
+
+	public void setLm_textField_1(JTextField lm_textField_1) {
+		this.lm_textField_1 = lm_textField_1;
+	}
+
+
+	public JTextField getLm_textField_3() {
+		return lm_textField_3;
+	}
+
+
+	public void setLm_textField_3(JTextField lm_textField_3) {
+		this.lm_textField_3 = lm_textField_3;
+	}
+
+
+	public JTextField getLm_textField_2() {
+		return lm_textField_2;
+	}
+
+
+	public void setLm_textField_2(JTextField lm_textField_2) {
+		this.lm_textField_2 = lm_textField_2;
+	}
+
+
+	public JTextField getFe_textField() {
+		return fe_textField;
+	}
+
+
+	public void setFe_textField(JTextField fe_textField) {
+		this.fe_textField = fe_textField;
+	}
+
+
+	public JTextField getFe_textField_1() {
+		return fe_textField_1;
+	}
+
+
+	public void setFe_textField_1(JTextField fe_textField_1) {
+		this.fe_textField_1 = fe_textField_1;
+	}
+
+
+	public JTextField getFe_textField_2() {
+		return fe_textField_2;
+	}
+
+
+	public void setFe_textField_2(JTextField fe_textField_2) {
+		this.fe_textField_2 = fe_textField_2;
+	}
+
+
+	public JTextField getFe_textField_3() {
+		return fe_textField_3;
+	}
+
+
+	public void setFe_textField_3(JTextField fe_textField_3) {
+		this.fe_textField_3 = fe_textField_3;
+	}
+
+
+	public JTable getTable() {
+		return table;
+	}
+
+
+	public void setTable(JTable table) {
+		this.table = table;
+	}
+
+
+	public UI getUi() {
+		return ui;
+	}
+
+
+	public void setUi(UI ui) {
+		this.ui = ui;
+	}
+
+
+	public MyFile getMyFile() {
+		return myFile;
+	}
+
+
+	public void setMyFile(MyFile myFile) {
+		this.myFile = myFile;
+	}
+
+
+	public void setDefects(Defects defects) {
+		this.defects = defects;
 	}
 
 
@@ -137,7 +271,7 @@ public class UI {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	public void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 1283, 724);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -299,7 +433,7 @@ public class UI {
 		frame.getContentPane().add(lblAnd_1);
 		
 
-		JButton lmNewRule = new JButton("New Rule");
+		lmNewRule = new JButton("New Rule");
 		lmNewRule.addActionListener(new ActionListener() {
 
 			@Override
@@ -417,7 +551,7 @@ public class UI {
 		frame.getContentPane().add(feResult);
 
 
-		JButton feNewRule = new JButton("New Rule");
+		feNewRule = new JButton("New Rule");
 
 		feNewRule.addActionListener(new ActionListener() {
 

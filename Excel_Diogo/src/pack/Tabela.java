@@ -15,6 +15,9 @@ public class Tabela {
 	private MyFile myFile;
 	private JTable table_1;
 
+	public JFrame getFrame() {
+		return this.frame;
+	}
 	/**
 	 * Launch the application.
 	 */
@@ -24,7 +27,7 @@ public class Tabela {
 		initialize();
 	}
 
-	private Object[][] getValues(){
+	public Object[][] getValues(){
 		int height = myFile.getRowList().size();
 		Object[][] matrix = new Object[height][12];
 		for (int i = 0; i < myFile.getRowList().size(); i++){
@@ -65,7 +68,7 @@ public class Tabela {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	public void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 1294, 720);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
