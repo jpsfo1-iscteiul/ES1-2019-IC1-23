@@ -1,20 +1,48 @@
 package pack;
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Premisse.
+ */
 public class Premisse {
 	
+	/** The metric. */
 	private Metric metric;
+	
+	/** The operator. */
 	private ComparisonOperator operator;
+	
+	/** The value. */
 	private double value;
+	
+	/** The min. */
 	private double min;
+	
+	/** The max. */
 	private double max;
 	
+	/**
+	 * Instantiates a new premisse.
+	 *
+	 * @param metric the metric
+	 * @param operator the operator
+	 * @param value the value
+	 */
 	public Premisse(Metric metric, ComparisonOperator operator, double value) {
 		this.metric = metric;
 		this.operator = operator;
 		this.value = value;
 	}
 	
+	/**
+	 * Instantiates a new premisse.
+	 *
+	 * @param metric the metric
+	 * @param operator the operator
+	 * @param min the min
+	 * @param max the max
+	 */
 	public Premisse(Metric metric, ComparisonOperator operator, double min, double max) {
 		this.metric = metric;
 		this.operator = operator;
@@ -23,6 +51,11 @@ public class Premisse {
 	}
 	
 	
+	/**
+	 * To string.
+	 *
+	 * @return the string
+	 */
 	@Override
 	public String toString() {
 		if(operator.equals(ComparisonOperator.BETWEEN) || operator.equals(ComparisonOperator.NOT_BETWEEN))
@@ -31,14 +64,30 @@ public class Premisse {
 		
 	}
 	
+	/**
+	 * Gets the metric.
+	 *
+	 * @return the metric
+	 */
 	public Metric getMetric() {
 		return metric;
 	}
 	
+	/**
+	 * Gets the operator.
+	 *
+	 * @return the operator
+	 */
 	public ComparisonOperator getOperator() {
 		return operator;
 	}
 	
+	/**
+	 * Checks if is true.
+	 *
+	 * @param cellValue the cell value
+	 * @return true, if is true
+	 */
 	public boolean isTrue(double cellValue) {
 		boolean answer = false;
 		switch (this.operator) {

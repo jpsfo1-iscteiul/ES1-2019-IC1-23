@@ -15,34 +15,64 @@ import pack.Metric;
 import pack.Premisse;
 import pack.Rule;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class RuleTest.
+ */
 class RuleTest {
 
+	/**
+	 * Sets the up before class.
+	 *
+	 * @throws Exception the exception
+	 */
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
 	}
 
+	/**
+	 * Tear down after class.
+	 *
+	 * @throws Exception the exception
+	 */
 	@AfterAll
 	static void tearDownAfterClass() throws Exception {
 	}
 
+	/**
+	 * Sets the up.
+	 *
+	 * @throws Exception the exception
+	 */
 	@BeforeEach
 	void setUp() throws Exception {
 	}
 
+	/**
+	 * Tear down.
+	 *
+	 * @throws Exception the exception
+	 */
 	@AfterEach
 	void tearDown() throws Exception {
 	}
 	
+	/** The r. */
 	Rule r=new Rule("Rule locM",new Premisse(Metric.LOC,ComparisonOperator.GT, 3), new Conclusion(Classifier.IS_LONG_METHOD, true));
 
+	/** The r 1. */
 	Rule r1=new Rule("Rule cycloM",new Premisse(Metric.CYCLO,ComparisonOperator.GT, 3), new Conclusion(Classifier.IS_LONG_METHOD, true));
 
+	/** The r 2. */
 	Rule r2=new Rule("Rule locm",new Premisse(Metric.LOC,ComparisonOperator.LT, 3), new Conclusion(Classifier.FEATURE_ENVY_DEFECT, true));
 
+	/** The r 3. */
 	Rule r3=new Rule("Rule cyclom",new Premisse(Metric.CYCLO,ComparisonOperator.LT, 3), new Conclusion(Classifier.FEATURE_ENVY_DEFECT, true));
 
+	/** The r 4. */
 	Rule r4=new Rule("Rule cyclom",new Premisse(Metric.CYCLO,ComparisonOperator.LT, 3),new Premisse(Metric.ATFD, ComparisonOperator.GT, 10),"and", new Conclusion(Classifier.FEATURE_ENVY_DEFECT, true));
 
+	/** The r 5. */
 	Rule r5=new Rule("Rule cyclom",new Premisse(Metric.CYCLO,ComparisonOperator.LT, 3), new Conclusion(Classifier.FEATURE_ENVY_DEFECT, true));
 		
 	/*
@@ -56,42 +86,34 @@ class RuleTest {
 			assertEquals(true, r3.getConclusion().getResult());
 			assertTrue((r4.getAndOr().equalsIgnoreCase("and"))); */
 
-	@Test
-	final void testRuleStringPremissePremisseStringConclusion() {
-		assertEquals(r4, new Rule("Rule cyclom",new Premisse(Metric.CYCLO,ComparisonOperator.LT, 3),new Premisse(Metric.ATFD, ComparisonOperator.GT, 10),"and", new Conclusion(Classifier.FEATURE_ENVY_DEFECT, true)));
-		
-	}
 
-	@Test
-	final void testRuleStringPremisseConclusion() {
-		assertEquals(r, new Rule("Rule locM",new Premisse(Metric.LOC,ComparisonOperator.GT, 3), new Conclusion(Classifier.IS_LONG_METHOD, true)));
-	}
-
+	/**
+	 * Test get result double double.
+	 */
 	@Test
 	final void testGetResultDoubleDouble() {
 		//assertEquals(true, );
 	}
 
-	@Test
-	final void testGetResultDouble() {
-		fail("Not yet implemented"); // TODO
-	}
-
+	/**
+	 * Test to string.
+	 */
 	@Test
 	final void testToString() {
 		assertEquals("Rule locM", r.toString());
 	}
 
+	/**
+	 * Test get name.
+	 */
 	@Test
 	final void testGetName() {
 		assertEquals("Rule locM", r.getName());
 	}
 
-	@Test
-	final void testGetConclusion() {
-		assertEquals(new Conclusion(Classifier.FEATURE_ENVY_DEFECT, true), r.getConclusion());
-	}
-
+	/**
+	 * Test get premisse 1.
+	 */
 	@Test
 	final void testGetPremisse1() {
 		Premisse p=new Premisse(Metric.CYCLO,ComparisonOperator.LT, 3);
@@ -99,14 +121,5 @@ class RuleTest {
 		
 	}
 
-	@Test
-	final void testGetPremisse2() {
-		assertEquals(new Premisse(Metric.ATFD, ComparisonOperator.GT, 10), r4.getPremisse2());
-	}
-
-	@Test
-	final void testGetAndOr() {
-		//assertTrue("and",r4.getAndOr());
-	}
 
 }

@@ -26,28 +26,69 @@ import javax.swing.JTable;
 import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class UI.
+ */
 public class UI {
 
+	/** The frame. */
 	private JFrame frame;
+	
+	/** The lm text field. */
 	private JTextField lm_textField;
+	
+	/** The lm text field 1. */
 	private JTextField lm_textField_1;
+	
+	/** The lm text field 3. */
 	private JTextField lm_textField_3;
+	
+	/** The lm text field 2. */
 	private JTextField lm_textField_2;
+	
+	/** The fe text field. */
 	private JTextField fe_textField;
+	
+	/** The fe text field 1. */
 	private JTextField fe_textField_1;
+	
+	/** The fe text field 2. */
 	private JTextField fe_textField_2;
+	
+	/** The fe text field 3. */
 	private JTextField fe_textField_3;
+	
+	/** The table. */
 	private JTable table;
+	
+	/** The defects. */
 	private Defects defects;
+	
+	/** The ui. */
 	private UI ui = this;
+	
+	/** The fe new rule. */
 	private JButton feNewRule;
+	
+	/** The lm new rule. */
 	private JButton lmNewRule;
 	
+	/**
+	 * Gets the lm new rule.
+	 *
+	 * @return the lm new rule
+	 */
 	public JButton getLmNewRule() {
 		return this.lmNewRule;
 	}
 
 
+	/**
+	 * Gets the fe new rule.
+	 *
+	 * @return the fe new rule
+	 */
 	public JButton getFeNewRule() {
 		return this.feNewRule;
 	}
@@ -56,136 +97,20 @@ public class UI {
 	 */
 	private MyFile myFile;
 	
-	public Defects getDefects(){
-		return defects;
-	}
-
-
-	public JFrame getFrame() {
-		return frame;
-	}
-
-
-	public void setFrame(JFrame frame) {
-		this.frame = frame;
-	}
-
-
-	public JTextField getLm_textField() {
-		return lm_textField;
-	}
-
-
-	public void setLm_textField(JTextField lm_textField) {
-		this.lm_textField = lm_textField;
-	}
-
-
-	public JTextField getLm_textField_1() {
-		return lm_textField_1;
-	}
-
-
-	public void setLm_textField_1(JTextField lm_textField_1) {
-		this.lm_textField_1 = lm_textField_1;
-	}
-
-
-	public JTextField getLm_textField_3() {
-		return lm_textField_3;
-	}
-
-
-	public void setLm_textField_3(JTextField lm_textField_3) {
-		this.lm_textField_3 = lm_textField_3;
-	}
-
-
-	public JTextField getLm_textField_2() {
-		return lm_textField_2;
-	}
-
-
-	public void setLm_textField_2(JTextField lm_textField_2) {
-		this.lm_textField_2 = lm_textField_2;
-	}
-
-
-	public JTextField getFe_textField() {
-		return fe_textField;
-	}
-
-
-	public void setFe_textField(JTextField fe_textField) {
-		this.fe_textField = fe_textField;
-	}
-
-
-	public JTextField getFe_textField_1() {
-		return fe_textField_1;
-	}
-
-
-	public void setFe_textField_1(JTextField fe_textField_1) {
-		this.fe_textField_1 = fe_textField_1;
-	}
-
-
-	public JTextField getFe_textField_2() {
-		return fe_textField_2;
-	}
-
-
-	public void setFe_textField_2(JTextField fe_textField_2) {
-		this.fe_textField_2 = fe_textField_2;
-	}
-
-
-	public JTextField getFe_textField_3() {
-		return fe_textField_3;
-	}
-
-
-	public void setFe_textField_3(JTextField fe_textField_3) {
-		this.fe_textField_3 = fe_textField_3;
-	}
-
-
+	/**
+	 * Gets the table.
+	 *
+	 * @return the table
+	 */
 	public JTable getTable() {
 		return table;
 	}
 
-
-	public void setTable(JTable table) {
-		this.table = table;
-	}
-
-
-	public UI getUi() {
-		return ui;
-	}
-
-
-	public void setUi(UI ui) {
-		this.ui = ui;
-	}
-
-
-	public MyFile getMyFile() {
-		return myFile;
-	}
-
-
-	public void setMyFile(MyFile myFile) {
-		this.myFile = myFile;
-	}
-
-
-	public void setDefects(Defects defects) {
-		this.defects = defects;
-	}
-
-
+	/**
+	 * The main method.
+	 *
+	 * @param args the arguments
+	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -207,6 +132,11 @@ public class UI {
 		initialize();
 	}
 
+	/**
+	 * Gets the values.
+	 *
+	 * @return the values
+	 */
 	private Object[][] getValues(){
 		int height = myFile.getRowList().size();
 		Object[][] matrix = new Object[height][12];
@@ -229,7 +159,12 @@ public class UI {
 	}
 
 
-	private void fillColumn(Rule rule) {
+	/**
+	 * Fill column.
+	 *
+	 * @param rule the rule
+	 */
+	public void fillColumn(Rule rule) {
 		int columnNumber;
 		if(rule.getConclusion().getClassifier().equals(Classifier.IS_LONG_METHOD)) 
 			columnNumber = 12;
@@ -849,32 +784,6 @@ public class UI {
 		textPane_ADII.setEditable(false);
 		textPane_ADII.setBounds(429, 594, 74, 37);
 		frame.getContentPane().add(textPane_ADII);
-		
-		JButton btnGrficoCircular = new JButton("Gr\u00E1fico Circular");
-		btnGrficoCircular.setBounds(523, 594, 138, 37);
-		frame.getContentPane().add(btnGrficoCircular);
-		
-		btnGrficoCircular.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				new GCircular().display(defects); 
-				
-			}
-		});
-		
-		JButton btnGrficoDeBarras = new JButton("Gr\u00E1fico de barras");
-		btnGrficoDeBarras.setBounds(683, 594, 138, 37);
-		frame.getContentPane().add(btnGrficoDeBarras);
-		
-		btnGrficoDeBarras.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				//FXMLLoader loader = new FXMLLoader(getClass().getResource(
-				new GBarras().display(defects);
-			}
-		});
 
 
 		Combo_DC.addItemListener(new ItemListener() {

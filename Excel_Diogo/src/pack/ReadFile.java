@@ -9,12 +9,26 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class ReadFile.
+ */
 public class ReadFile {
 	
+	/** The workbook. */
 	private XSSFWorkbook workbook;
+	
+	/** The sheet. */
 	private XSSFSheet sheet;
+	
+	/** The list. */
 	private List<Row> list = new ArrayList<Row>();
 	
+	/**
+	 * Instantiates a new read file.
+	 *
+	 * @param fileName the file name
+	 */
 	public ReadFile(String fileName){
 		try {
 			workbook = new XSSFWorkbook(new FileInputStream(fileName));
@@ -26,6 +40,12 @@ public class ReadFile {
 		sheet = workbook.getSheetAt(0);
 	}
 	
+	/**
+	 * Read row.
+	 *
+	 * @param numberOfRowToRead the number of row to read
+	 * @return the row
+	 */
 	public Row readRow(int numberOfRowToRead){
 		XSSFRow row = sheet.getRow(numberOfRowToRead); 
 		int methodID = (int)row.getCell(0).getNumericCellValue();
@@ -50,6 +70,11 @@ public class ReadFile {
 		return new Row(methodID, packageName, className, method, loc, cyclo, atdf, laa, isLongMethod, iPlasma, pmd, isFeatureEnvy);
 	}
 	
+	/**
+	 * Read all rows.
+	 *
+	 * @return the list
+	 */
 	public List<Row> readAllRows(){
 		int last = sheet.getLastRowNum();
 		for(int i = 1; i<=last; i++){

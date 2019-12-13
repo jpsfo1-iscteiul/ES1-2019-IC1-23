@@ -2,16 +2,29 @@ package pack;
 
 import java.util.ArrayList;
 
+// TODO: Auto-generated Javadoc
 //import java.util.List;
 
+/**
+ * The Class Rule.
+ */
 public class Rule {
 
 
+/** The premisse 1. */
 //	private List<Premisse> premisses;
 	private Premisse premisse1;
+	
+	/** The premisse 2. */
 	private Premisse premisse2;
+	
+	/** The and or. */
 	private String andOr;
+	
+	/** The conclusion. */
 	private Conclusion conclusion;
+	
+	/** The name. */
 	private String name;
 
 //	public Rule(List<Premisse> premisses, Conclusion conclusion) {
@@ -19,7 +32,16 @@ public class Rule {
 //		this.conclusion = conclusion;
 //	}
 	
-	public Rule(String name, Premisse premisse1, Premisse premisse2, String andOr, Conclusion conclusion) {
+	/**
+ * Instantiates a new rule.
+ *
+ * @param name the name
+ * @param premisse1 the premisse 1
+ * @param premisse2 the premisse 2
+ * @param andOr the and or
+ * @param conclusion the conclusion
+ */
+public Rule(String name, Premisse premisse1, Premisse premisse2, String andOr, Conclusion conclusion) {
 		this.name = name;
 		this.premisse1 = premisse1;
 		this.premisse2 = premisse2;
@@ -27,6 +49,13 @@ public class Rule {
 		this.conclusion = conclusion;
 	}
 	
+	/**
+	 * Instantiates a new rule.
+	 *
+	 * @param name the name
+	 * @param premisse1 the premisse 1
+	 * @param conclusion the conclusion
+	 */
 	public Rule(String name, Premisse premisse1, Conclusion conclusion ) {
 		this.andOr = "";
 		this.name = name;
@@ -34,6 +63,13 @@ public class Rule {
 		this.conclusion = conclusion;
 	}
 	
+	/**
+	 * Gets the result.
+	 *
+	 * @param cellValue1 the cell value 1
+	 * @param cellValue2 the cell value 2
+	 * @return the result
+	 */
 	public Boolean getResult(double cellValue1, double cellValue2) {
 		boolean answer = !getConclusion().getResult();
 		if(andOr.equals("AND")) 
@@ -46,17 +82,33 @@ public class Rule {
 		return answer;
 	}
 	
+	/**
+	 * Gets the result.
+	 *
+	 * @param cellValue the cell value
+	 * @return the result
+	 */
 	public Boolean getResult(double cellValue) {
 		if(premisse1.isTrue(cellValue))
 			return getConclusion().getResult();
 		return !getConclusion().getResult();
 	}
 	
+	/**
+	 * To string.
+	 *
+	 * @return the string
+	 */
 	@Override
 		public String toString() {
 			return this.name;
 		}
 	
+	/**
+	 * Gets the name.
+	 *
+	 * @return the name
+	 */
 	public String getName() {
 		return name;
 	}
@@ -81,18 +133,38 @@ public class Rule {
 //	}
 	
 	
-	public Conclusion getConclusion() {
+	/**
+ * Gets the conclusion.
+ *
+ * @return the conclusion
+ */
+public Conclusion getConclusion() {
 		return conclusion;
 	}
 
+	/**
+	 * Gets the premisse 1.
+	 *
+	 * @return the premisse 1
+	 */
 	public Premisse getPremisse1() {
 		return premisse1;
 	}
 	
+	/**
+	 * Gets the premisse 2.
+	 *
+	 * @return the premisse 2
+	 */
 	public Premisse getPremisse2() {
 		return premisse2;
 	}
 	
+	/**
+	 * Gets the and or.
+	 *
+	 * @return the and or
+	 */
 	public String getAndOr() {
 		return andOr;
 	}

@@ -7,8 +7,15 @@ import org.junit.jupiter.api.Test;
 import pack.Classifier;
 import pack.Conclusion;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Conclusion_test.
+ */
 class Conclusion_test {
 
+	/**
+	 * Test.
+	 */
 	@Test
 	void test() {
 		Conclusion conclusion = new Conclusion(Classifier.IS_LONG_METHOD, false);
